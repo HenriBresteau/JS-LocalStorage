@@ -13,4 +13,15 @@ function setData() {
     let pseudo = document.getElementById('pseudo').value;
     localStorage.setItem('nom',pseudo);
 }
+
+const visit = () =>{
+    let visitDisplay = document.getElementById('visitDisplay');
+    let visitCount = localStorage.getItem('visites');
+
+    visitCount++;
+    localStorage.setItem('visites', visitCount);
+    visitDisplay.innerHTML = `Nombre de viste ${visitCount}`
+}
+
 name();
+visit();
