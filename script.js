@@ -3,7 +3,7 @@ const name = () => {
     let nameStorage = localStorage.getItem('nom');
 
     if (nameStorage == null) {
-        sayHello.innerHTML = "BOnjour à toi l'incoonu, merci de renseigner ton pseudo"
+        sayHello.innerHTML = "BOnjour à toi l'inconnu, merci de renseigner ton pseudo"
     } else {
         sayHello.innerHTML = `Bonjour ${nameStorage}`;
     }
@@ -20,7 +20,7 @@ const visit = () =>{
 
     visitCount++;
     localStorage.setItem('visites', visitCount);
-    visitDisplay.innerHTML = `Nombre de viste ${visitCount}`
+    visitDisplay.innerHTML = `Nombre de visites ${visitCount}`
 }
 
 name();
