@@ -21,7 +21,25 @@ const visit = () =>{
     visitCount++;
     localStorage.setItem('visites', visitCount);
     visitDisplay.innerHTML = `Nombre de visites ${visitCount}`
+    setTimeout(() => {
+        getIP();
+    }, 500);
+    
 }
 
 name();
 visit();
+
+const cityDisplay = document.getElementById('city');
+const regionDisplay = document.getElementById('region');
+const paysDisplay = document.getElementById('pays');
+const getIP = async() => {
+    await fetch('http://ip-api.com/json/')
+    .then(res => res.json())
+    .then( res => {
+        console.log(res);
+        cityDisplay.innerHTML = res.city;
+        regionDisplay.innerHTML = res.regionName;
+        paysDisplay.innerHTML = res.country;
+    })
+}
